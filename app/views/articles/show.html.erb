@@ -1,2 +1,10 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<div class = "main">
+  <h1>論文詳細</h1>
+  <p><%= @article.title %></p>
+  <p><%= @article.body %></p>
+</div>
+<div class = "link">
+  <%= link_to "一覧へ戻る", articles_path %>
+  <%= link_to "編集", edit_article_path %>
+  <%= link_to "削除", article_path, method: :delete %>
+</div>
