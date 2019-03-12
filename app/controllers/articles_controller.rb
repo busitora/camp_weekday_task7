@@ -12,12 +12,13 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(post_params) # ストロングパラメータを引数に
+    @article = Article.new(article_params) # ストロングパラメータを引数に
     @article.save
     redirect_to @article
   end
 
   def edit
+    @article = Article.find(params[:id])
   end
 
   def update
