@@ -1,5 +1,12 @@
-<h1>論文一覧</h1>
 <% @articles.each do |article| %>
-  <p><%= link_to article.title, article %><p>
+<div class="mb-5">
+  <h4><%= article.title %></h4>
+  <h5 class="text-secondary"><%= article.created_at.strftime('%b %d, %Y') %></h5>
+  <p>
+    <%= article.body.truncate(100) %>
+  </p>
+  <p>
+    <%= link_to "More detail", article_path(article), class: "text-dark" %>
+  </p>
+</div>
 <% end %>
-<%= link_to "新規論文投稿", new_article_path %>
